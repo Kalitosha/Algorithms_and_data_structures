@@ -43,40 +43,6 @@ function search(node, data) {
 	return node.data;
 }
 
-/*
-	if (node != null) {		
-		if (data != node.data) {			
-			if (data < node.data)
-				search(node.left, data);
-			else
-				search(node.right, data);
-		}
-		else {
-			console.log(node.data);
-			return node.data; // тут какая-то дичь происходит, но алгоритм работает правильно
-		} 
-	}  
-*/
-/*
-	var stack = [];
-	while(stack.length != 0 || node != null){
-		
-		if (node != null) {	
-			if (data == node.data) { 
-				console.log(node.data); 
-				return node.data; 
-			}				
-			if (node.right != null) {
-				stack.push(node.right);
-			}
-			node = node.left;			
-		} else {
-			node = stack.pop();
-		}
-	}
-*/	
-
-
 
 function addNode(node, data){
 
@@ -149,61 +115,6 @@ function heightTree(node){
 
 
 function removeNode(node, data){
-/*
-	var parent = node;
-	// надо найти вершину для удаления	
-	while (node != null && data != node.data){
-		parent = node;
-		if (data < node.data) 
-			node = node.left;
-		else 
-			node = node.right;
-	}	
-	var delNode = node; // удаляемая вершина
-
-	//если узел не имеет потомков, он просто удаляется
-	if (delNode.left == null && delNode.right == null) {
-		if (parent.left == delNode) // удаляем ссылку на узел из родителя
-			parent.left = null;
-		else if (parent.right == delNode)
-			parent.right = null;
-		delNode = null;		
-	}
-	// если нет правого потомка, узел заменяется левымм поддеревом
-	else if (delNode.right == null && delNode.left != null) {
-		if (parent.left == delNode) // двигаем указатель родителя
-			parent.left = delNode.left;
-		else if (parent.right == delNode)
-			parent.right = delNode.left;
-		delNode = null;		
-	}
-	// если нет левого потомка, узел заменяется правым поддеревом
-	else if (delNode.left == null && delNode.right != null) {
-		if (parent.left == delNode) // двигаем указатель родителя
-			parent.left = delNode.right;
-		else if (parent.right == delNode)
-			parent.right = delNode.right;
-		delNode = null;	
-	}
-	// если есть оба потомка, узел заменяется следующим по величине(один шаг вправо, после влево до упора)
-	else {
-		// ищем узел для замены
-		node = node.right;
-		var parentNode; 
-		while (node.left != null){		
-			parentNode = node;
-			node = node.left;
-		}	
-		//далее надо заменить удаляемый на найденный и поменять все ссылкина него
-		if (node.right != null) { // если у найденного есть правый ребенок, надо подвинуть ссылки
-
-		}
-		else {
-
-		}
-	}
-*/
-
 	var parentDelNode = node;
 	// надо найти вершину для удаления	
 	while (node != null && data != node.data){
